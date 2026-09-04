@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="en">
+
+  <head>
+    <script src="libraries/p5.js"></script>
+    <script src="libraries/p5.dom.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+    <script src="libraries/matter.js"></script>
+    <script src="libraries/p5.play.js"></script>
+
+    <!-- Core Firebase SDK with offline fallback -->
+    <script>
+      window.firebase = window.firebase || {};
+      window.firebase.initializeApp = window.firebase.initializeApp || function () { return {}; };
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+    <script>
+      // Optional Firebase configuration (if deactivated, LocalDatabase automatically handles all operations)
+      var firebaseConfig = {
+        apiKey: "AIzaSyAOktinTEYaEv3WCNBzMA5ISCXewHFV_FA",
+        authDomain: "fruit-catcher-f45ab.firebaseapp.com",
+        databaseURL: "https://fruit-catcher-f45ab-default-rtdb.firebaseio.com",
+        projectId: "fruit-catcher-f45ab",
+        storageBucket: "fruit-catcher-f45ab.appspot.com",
+        messagingSenderId: "802594416292",
+        appId: "1:802594416292:web:ca19886840ce21d89ea831"
+      };
+      try {
+        if (firebase.initializeApp) {
+          firebase.initializeApp(firebaseConfig);
+        }
+      } catch (e) {
+        console.warn("Using offline database adapter");
+      }
+    </script>
+
+    <!-- Offline Realtime Database Adapter (mirrors Firebase RTDB with BroadcastChannel & localStorage) -->
+    <script src="js/LocalDatabase.js"></script>
+
+    <script src="js/Player.js"></script>
+    <script src="js/Form.js"></script>
+    <script src="js/Game.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <script src="sketch.js"></script>
+  </body>
+
+</html>
